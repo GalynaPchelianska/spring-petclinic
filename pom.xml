@@ -30,8 +30,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <finalName>${project.artifactId}-{project.version}</finalName>
-            </plugin>
+                </plugin>
         </plugins>
     </build>
 </project>
