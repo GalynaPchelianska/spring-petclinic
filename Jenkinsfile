@@ -3,7 +3,14 @@ pipeline{
     agent any
     tools {
         maven 'maven'
-    }
+    } 
+environment {
+    ArtifactId = readMavenPom ().getArtifactId()
+    Version = readMavenPom().getVersion()
+    Name = readMavenPom().getName()
+    GroupId = readMavenPom().getGroupeId()
+} 
+
    
     stages {
         // Specify various stage with in stages
@@ -28,9 +35,21 @@ pipeline{
         stage ('Publish to Nexus') {
             steps {
 
-            nexusArtifactUploader artifacts: [[artifactId: 'spring-petclinic', classifier: '', file: 'target/spring-petclinic-2.4.5.jar', type: 'jar']], credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc', groupId: 'org.springframework.samples', nexusUrl: '10.0.0.105:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Course-work-Release', version: '2.4.5'
+            nexusArtifactUploader artifacts:
+            [[artifactId: "${ArtifactId}",
+            classifier: '',
+            file: 'target/spring-petclinic-2.4.5.jar',
+            type: 'jar']],
+            credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc',
+            groupId: "${GroupId}",
+            nexusUrl: '10.0.0.105:8081',
+            nexusVersion: 'nexus3',
+            protocol: 'http',
+            repository: 'Course-work-Release',
+            version: "${Version}"
         }
         }
+        
         // Stage4 : Deploing
         stage ('Deploy') {
             steps {
