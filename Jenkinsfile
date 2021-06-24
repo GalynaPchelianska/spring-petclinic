@@ -38,7 +38,7 @@ environment {
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
             classifier: '',
-            file: "target/${ArtifactId}-${Version}.jar',
+            file: "target/${ArtifactId}-${Version}.jar",
             type: 'jar']],
             credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc',
             groupId: "${GroupId}",
