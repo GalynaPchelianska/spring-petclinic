@@ -38,7 +38,7 @@ environment {
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
             classifier: '',
-            file: 'target/spring-petclinic-2.4.5.jar',
+            file: "target/${ArtifactId}-${Version}.jar',
             type: 'jar']],
             credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc',
             groupId: "${GroupId}",
