@@ -5,12 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>2.4.5</version>
+  <version>${2.4.5</version>
+<name>${project.artifactID}-${project.version}</name>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.4.5</version>
+    <version>${Version}</version>
   </parent>
   <name>${project.artifactID}-${project.version}</name>
 
