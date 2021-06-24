@@ -34,7 +34,7 @@ pipeline{
         // Stage4 : Deploing
         stage ('Deploy') {
             steps {
-                echo "deploing ..."
+                echo "deploing ...."
             }
         }
 
