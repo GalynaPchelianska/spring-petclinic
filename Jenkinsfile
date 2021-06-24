@@ -28,7 +28,7 @@ pipeline{
         stage ('Publish to Nexus') {
             steps {
 
-            nexusArtifactUploader artifacts: [[artifactId: 'Coursework', classifier: '', file: 'target/Coursework-0.0.4-SNAPSHOT.jar', type: 'jar']], credentialsId: '26ca66ec-babc-452e-b678-0a010ddad642', groupId: 'com.coursework', nexusUrl: '10.0.0.105:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.4-SNAPSHOT'
+            nexusArtifactUploader artifacts: [[artifactId: 'spring-petclinic', classifier: '', file: 'target/org.springframework.samples-2.4.5', type: 'jar']], credentialsId: '26ca66ec-babc-452e-b678-0a010ddad642', groupId: 'org.springframework.samples', nexusUrl: '10.0.0.105:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'org.springframework.samples-2.4.5', version: '2.4.5'
         }
         }
         // Stage4 : Deploing
