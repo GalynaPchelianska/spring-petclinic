@@ -7,7 +7,7 @@
   <artifactId>spring-petclinic</artifactId>
   <name>spring-petclinic</name>
   <version>2.4.5</version>
-  <buildNamber>1.1</buildNamber>
+  <buildNumber>1.1</buildNumber>
  
  <build>
      <finalName>${project.name}.${project.version}.${BUILD_NUMBER}</finalName>
