@@ -35,7 +35,7 @@ environment {
             steps {
                 script {
 
- def NexusRepo = Version.endsWith("SNAPSHOT") : "Course-work-Release" }
+ def NexusRepo = Version.endsWith("SNAPSHOT") ? "Course-work-Snaphot" : "Course-work-Release" 
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
             classifier: '',
@@ -50,6 +50,7 @@ environment {
             version: "${Version}"
             build-number: "${Build-number}"
         }
+            }
                 }
         
         // Stage4 : Deploing
