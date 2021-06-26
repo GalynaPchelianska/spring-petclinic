@@ -33,6 +33,8 @@ environment {
         // Stage3 : Publish the to Nexus
         stage ('Publish to Nexus'){
             steps {
+                script {
+                    
  def NexusRepo = Version.endsWith("SNAPSHOT") : "Course-work-Release"
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
@@ -47,6 +49,7 @@ environment {
             repository: 'Course-work-Release',
             version: "${Version}"
             build-number: "${Build-number}"
+        }
         }
         }
         
