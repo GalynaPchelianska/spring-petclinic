@@ -9,6 +9,8 @@ environment {
     Version = readMavenPom().getVersion()
     Name = readMavenPom().getName()
     GroupId = readMavenPom().getGroupId()
+    BuildNumber = readMavenPom().getBuildNamberId()
+
 } 
 
    
@@ -48,7 +50,7 @@ environment {
             protocol: 'http',
             repository: 'Course-work-Release',
             version: "${Version}"
-            build-number: "${Build-number}"
+            buildNumber: "${Build-number}"
         }
             }
                 }
