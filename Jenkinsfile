@@ -9,9 +9,7 @@ environment {
     Version = readMavenPom().getVersion()
     Name = readMavenPom().getName()
     GroupId = readMavenPom().getGroupId()
-    BuildNumber = readMavenPom().getBuildNamberId()
-
-} 
+    } 
 
    
     stages {
@@ -41,7 +39,7 @@ environment {
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
             classifier: '',
-            file: "target/${ArtifactId}-${Build-number}.jar",
+            file: "target/${ArtifactId}-${Version}.jar",
             type: 'jar']],
             credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc',
             groupId: "${GroupId}",
@@ -50,8 +48,7 @@ environment {
             protocol: 'http',
             repository: 'Course-work-Release',
             version: "${Version}"
-            buildNumber: "${Build-number}"
-        }
+                    }
             }
                 }
         
