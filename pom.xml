@@ -5,8 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-  <version>${2.4.5</version>
-<name>${project.artifactID}-${project.version}</name>
+  <name>spring-petclinic</name>
+  <version>1.1</version>
+ <build>
+
+            <finalName>${project.name}##${project.version}.${BUILD_NUMBER}</finalName>
+    </build>
 
   <parent>
     <groupId>org.springframework.boot</groupId>

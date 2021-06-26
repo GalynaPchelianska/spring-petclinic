@@ -47,6 +47,7 @@ environment {
             protocol: 'http',
             repository: 'Course-work-Release',
             version: "${Version}"
+            build-number: "${build-number}"
         }
         }
         
