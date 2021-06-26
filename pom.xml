@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
-    <version>2.4.5</version>
+  <version>2.4.5</version>
    
    <parent>
     <groupId>org.springframework.boot</groupId>
@@ -122,6 +122,7 @@
   </dependencies>
 
   <build>
+    <finalName>${project.name}-${project.version}.${BUILD_NUMBER}</finalName>
     <plugins>
       <plugin>
         <groupId>io.spring.javaformat</groupId>
