@@ -21,8 +21,7 @@ environment {
                 sh 'mvn clean install package'
             }
         }
-
-
+    
         // Stage2 : Testing
         stage ('Test'){
             steps {
@@ -38,7 +37,7 @@ environment {
             nexusArtifactUploader artifacts:
             [[artifactId: "${ArtifactId}",
             classifier: '',
-            file: "target/${ArtifactId}-${Version}.jar",
+            file: "target/${ArtifactId}-${Build-number}.jar",
             type: 'jar']],
             credentialsId: '826640f8-3af5-43f8-9c7d-adfa35fbd2fc',
             groupId: "${GroupId}",
@@ -47,7 +46,7 @@ environment {
             protocol: 'http',
             repository: 'Course-work-Release',
             version: "${Version}"
-            build-number: "${build-number}"
+            build-number: "${Build-number}"
         }
         }
         
